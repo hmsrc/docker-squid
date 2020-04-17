@@ -1,11 +1,11 @@
-FROM alpine:3.10
+FROM alpine:3.11
 
-MAINTAINER chrisdaish@gmail.com
+MAINTAINER phil.ayres@consected.com
 
-RUN apk update \
-    && apk add squid=4.8-r0 \
-    && apk add curl \
-    && rm -rf /var/cache/apk/*
+RUN apk update &&
+  apk add squid=4.10 &&
+  apk add curl &&
+  rm -rf /var/cache/apk/*
 
 COPY start-squid.sh /usr/local/bin/
 
